@@ -16,7 +16,7 @@ function Home() {
       try {
         const {data} = await axios.get(`trending/all/day`)
         const randamdata = data.results[(Math.random() * data.results.length).toFixed()]
-        console.log(randamdata);
+        // console.log(randamdata);
         setwalpaper(randamdata)
       } catch (error) {
         console.log("error",error)
