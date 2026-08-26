@@ -2,16 +2,38 @@
 
 import { Link } from "react-router"
 
-function Sidenav() {
+function Sidenav({ isOpen, onClose }) {
   return (
     <>
-      <div className="w-[20rem] border-r-2 border-zinc-200 p-4">
-        
-        <h1 className="text-white text-2xl ">
-            <i className="ri-tv-fill mr-3"></i>
-            TmDB
-        </h1>
-        <nav className=" flex flex-col text-zinc-100 gap-5">
+      {/* Dark overlay on mobile when drawer is open */}
+      {isOpen && (
+        <div
+          onClick={onClose}
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
+        ></div>
+      )}
+
+      <div
+        className={`
+          fixed md:static top-0 left-0 h-full md:h-auto z-50
+          w-[75%] sm:w-[20rem] md:w-[20rem]
+          border-r-2 border-zinc-700 md:border-zinc-200 p-4
+          bg-[#1F1E24] overflow-y-auto
+          transform transition-transform duration-300 ease-in-out
+          ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0
+        `}
+      >
+        <div className="flex items-center justify-between md:block">
+          <h1 className="text-white text-2xl">
+              <i className="ri-tv-fill mr-3"></i>
+              TmDB
+          </h1>
+          <button onClick={onClose} className="md:hidden text-white text-3xl leading-none">
+            <i className="ri-close-line"></i>
+          </button>
+        </div>
+
+        <nav onClick={onClose} className="flex flex-col text-zinc-100 gap-5">
             <h1 className="text-white text-center font-bold mt-10 mb-5">
                 New Feeds
             </h1>

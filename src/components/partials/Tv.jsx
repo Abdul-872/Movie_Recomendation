@@ -51,18 +51,20 @@ function Tv() {
   };
 
   return tv.length > 0 ? (
-    <div className="w-screen min-h-screen overflow-auto p-[3%]">
+    <div className="w-screen min-h-screen overflow-auto p-4 sm:p-[3%]">
 
-      <div className="w-full flex items-center h-[15vh] p-3">
+      <div className="w-full flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-0 h-auto md:h-[15vh] py-3">
 
-        <i
-          onClick={() => navigate(-1)}
-          className="text-2xl text-purple-500 ri-arrow-left-long-line"
-        ></i>
+        <div className="flex items-center gap-3 w-full sm:w-auto">
+          <i
+            onClick={() => navigate(-1)}
+            className="text-2xl text-purple-500 ri-arrow-left-long-line shrink-0"
+          ></i>
 
-        <h1 className="text-2xl text-white font-bold ml-3 mr-[10%]">
-          tv
-        </h1>
+          <h1 className="text-xl sm:text-2xl text-white font-bold md:mr-[10%]">
+            tv
+          </h1>
+        </div>
 
         <TopNav />
 
@@ -75,7 +77,7 @@ function Tv() {
         func={(e) => setCategory(e.target.value)}
         />
 
-        <div className="w-5"></div>
+        <div className="hidden md:block w-5"></div>
 
       </div>
 

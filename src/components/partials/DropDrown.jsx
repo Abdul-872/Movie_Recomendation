@@ -1,6 +1,6 @@
 function DropDrown({ tittle, option, func }) {
   return (
-    <div className="w-[20%] select">
+    <div className="w-full sm:w-[45%] md:w-[20%] select">
       <select
         onChange={func}
         className="w-full h-10 bg-zinc-800 text-white px-3 rounded"
@@ -23,5 +23,4 @@ function DropDrown({ tittle, option, func }) {
     </div>
   );
 }
-
 export default DropDrown;

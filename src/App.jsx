@@ -13,7 +13,7 @@ import People from "./components/partials/People"
 // import React from 'react'
 function App() {
   return (
-    <div className="bg-[#1F1E24] h-screen w-screen flex">
+    <div className="bg-[#1F1E24] min-h-screen w-screen flex overflow-x-hidden">
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/Trending" element={<Trending />}/>

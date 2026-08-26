@@ -78,14 +78,14 @@ function PeopleDetails() {
 
       {/* PERSON DETAILS */}
 
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8">
 
         {/* PROFILE IMAGE */}
 
         <div className="shrink-0">
 
           <img
-            className="w-[220px] md:w-[280px] h-[320px] md:h-[400px] object-cover rounded-2xl shadow-2xl"
+            className="w-[180px] sm:w-[220px] md:w-[280px] h-[260px] sm:h-[320px] md:h-[400px] object-cover rounded-2xl shadow-2xl mx-auto md:mx-0"
             src={`https://image.tmdb.org/t/p/w500${
               person.profile_path
             }`}
@@ -97,11 +97,11 @@ function PeopleDetails() {
 
         {/* INFORMATION */}
 
-        <div className="flex-1">
+        <div className="flex-1 text-center md:text-left">
 
           {/* NAME */}
 
-          <h1 className="text-4xl font-bold text-purple-400">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-400 text-center md:text-left">
             {person.name}
           </h1>
 
@@ -156,7 +156,7 @@ function PeopleDetails() {
 
           {/* COUNTS */}
 
-          <div className="flex flex-wrap gap-5 mt-6">
+          <div className="flex flex-wrap gap-3 sm:gap-5 mt-6 justify-center md:justify-start">
 
             {/* MOVIES */}
 
@@ -229,17 +229,17 @@ function PeopleDetails() {
 
           {/* WRAPPING GRID */}
 
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-3 sm:gap-5 justify-center md:justify-start">
 
             {movies.map((movie) => (
 
               <div
                 key={movie.id}
-                className="w-[180px] shrink-0"
+                className="w-[130px] sm:w-[180px] shrink-0"
               >
 
                 <img
-                  className="w-full h-[260px] object-cover rounded-xl"
+                  className="w-full h-[190px] sm:h-[260px] object-cover rounded-xl"
                   src={`https://image.tmdb.org/t/p/w500${
                     movie.poster_path
                   }`}
@@ -280,17 +280,17 @@ function PeopleDetails() {
 
           {/* WRAPPING GRID */}
 
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-3 sm:gap-5 justify-center md:justify-start">
 
             {tvShows.map((show) => (
 
               <div
                 key={show.id}
-                className="w-[180px] shrink-0"
+                className="w-[130px] sm:w-[180px] shrink-0"
               >
 
                 <img
-                  className="w-full h-[260px] object-cover rounded-xl"
+                  className="w-full h-[190px] sm:h-[260px] object-cover rounded-xl"
                   src={`https://image.tmdb.org/t/p/w500${
                     show.poster_path
                   }`}

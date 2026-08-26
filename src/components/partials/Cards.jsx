@@ -23,7 +23,7 @@ function Cards({ data, title, fetchMore, hasMore }) {
         </p>
       }
     >
-      <div className="w-full flex flex-wrap p-8 rounded-2xl gap-4 bg-black">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4 sm:p-8 rounded-2xl bg-black">
         {data.map((s, i) => (
 
           <Link  to={
@@ -46,21 +46,20 @@ function Cards({ data, title, fetchMore, hasMore }) {
       : `/Movies/MovieDetails/${s.id}`
   }
             key={s.id || i}
-            className="w-[200px]"
+            className="w-full"
           >
             <img
-              className="w-full rounded-2xl h-[240px] object-cover"
+              className="w-full rounded-2xl h-[160px] sm:h-[200px] md:h-[240px] object-cover"
               src={`https://image.tmdb.org/t/p/original${
                 s.backdrop_path || s.poster_path || s.profile_path
               }`}
               alt=""
             />
-
-            <p className="text-white font-bold mt-4">
+            <p className="text-white text-sm sm:text-base font-bold mt-2 sm:mt-4 line-clamp-1">
               {s.name || s.title || s.original_title}
             </p>
 
-            <p>{title}</p>
+            <p className="text-xs sm:text-sm text-zinc-400">{title}</p>
           </Link>
         ))}
       </div>

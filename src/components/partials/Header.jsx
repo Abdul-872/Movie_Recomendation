@@ -51,14 +51,14 @@ function Header({ data }) {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="w-full h-[45vh] flex flex-col items-start justify-end"
+      className="w-full h-[35vh] sm:h-[40vh] md:h-[45vh] flex flex-col items-start justify-end px-4 sm:px-6 md:ml-1"
     >
 
-      <h1 className="font-bold text-5xl text-white ml-7 mb-4">
+      <h1 className="font-bold text-2xl sm:text-3xl md:text-5xl text-white mb-2 sm:mb-4 line-clamp-2">
         {data.name || data.title || data.original_title}
       </h1>
 
-      <p className="font-bold text-white text-sm ml-7 mb-1">
+      <p className="font-bold text-white text-xs sm:text-sm mb-3 sm:mb-1 max-w-[95%] sm:max-w-[80%] md:max-w-[600px]">
 
         {data.overview?.slice(0, 200)}...
 
@@ -82,7 +82,7 @@ function Header({ data }) {
           target="_blank"
           rel="noreferrer"
           href={`https://www.youtube.com/watch?v=${video.key}`}
-          className="inline-block mt-6 px-5 py-3 bg-purple-300 rounded-lg font-bold hover:bg-red-700"
+          className="inline-block mb-4 sm:mb-6 px-4 py-2 sm:px-5 sm:py-3 text-sm sm:text-base bg-purple-300 rounded-lg font-bold hover:bg-red-700"
         >
           ▶ Watch Trailer
         </a>
